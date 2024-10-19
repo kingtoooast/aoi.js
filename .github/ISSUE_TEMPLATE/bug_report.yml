@@ -1,0 +1,87 @@
+name: Reporting Bug
+description: Report us the issue, and leave it to us! 🤗
+assignees: "Leref"
+title: "Bug: "
+labels: "bug"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report! Fill in the blanks by following the steps. 🙌
+      
+  - type: dropdown
+    id: type
+    attributes:
+      label: Bug Type
+      description: Please select a type of bug you want to report.
+      options:
+        - Function 
+        - Callback 
+        - Handler 
+        - Other
+    validations:
+      required: true
+      
+  - type: textarea
+    id: code
+    attributes:
+      label: Bugged Behavior 
+      render: js
+      description: Please type usage of your code
+      placeholder: |
+        module.exports = {
+          name: "ping",
+          type: 'interaction',
+          prototype: 'slash',
+          code: `
+          $sendMessage[Hello?]
+          `
+        }
+    validations:
+      required: true
+   
+  - type: dropdown
+    id: aoijs-version
+    attributes:
+      label: Version of aoi.js
+      description: What version of aoi.js are you using?
+      options:
+        - v6.8.x
+        - v6.7.x
+        - v6.6.x
+        - Older
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: node-version
+    attributes:
+      label: Version of Node.js
+      description: Also, what version of Node.js are you using? 
+      options:
+        - v16.11.0 (Lowest)
+        - v20.16.0 (LTS)
+        - v22.5.1 (Current)
+    validations:
+      required: true
+      
+  - type: textarea
+    id: excepted
+    attributes:
+      label: Excepted Output
+      description: Please describe your expectations the code you have tried.
+      
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output.
+      
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/AkaruiDevelopment/aoi.js/blob/v5/.github/CODE_OF_CONDUCT.md)
+      options:
+        - label: I agree to follow this project's Code of Conduct 
+          required: true
